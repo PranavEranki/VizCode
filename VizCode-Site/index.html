@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>VizCode</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-loading">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+				<!-- <table > -->
+					<!-- <col style="width:40%" /> -->
+					<!-- <tr> -->
+						<!-- <td padding="10px">
+							<section id="main">
+								<p>
+									<img id="img" height="480" hidden="true"/>
+									<video id="video" width="640" height="480" autoplay hidden="true"></video>
+									<canvas id="canvas" hidden="true"></canvas>
+								</p>
+							</section>
+						</td> -->
+
+						<!-- <td> -->
+							<section id="main">
+								<header>
+									<!-- <br /> -->
+									<a href=""><span class="avatar"><img src="images/aperture2.png" alt="" /></span></a>
+
+									<h1>VizCode</h1>
+									<p>What You See Is What You Build</p>
+								</header>
+									<!--
+									<hr />
+									<h2>Extra Stuff!</h2>
+									<form method="post" action="#">
+										<div class="field">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<div class="select-wrapper">
+												<select name="department" id="department">
+													<option value="">Department</option>
+													<option value="sales">Sales</option>
+													<option value="tech">Tech Support</option>
+													<option value="null">/dev/null</option>
+												</select>
+											</div>
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message" rows="4"></textarea>
+										</div>
+										<div class="field">
+											<input type="checkbox" id="human" name="human" /><label for="human">I'm a human</label>
+										</div>
+										<div class="field">
+											<label>But are you a robot?</label>
+											<input type="radio" id="robot_yes" name="robot" /><label for="robot_yes">Yes</label>
+											<input type="radio" id="robot_no" name="robot" /><label for="robot_no">No</label>
+										</div>
+										<ul class="actions">
+											<li><a href="#" class="button">Get Started</a></li>
+										</ul>
+									</form>
+									<hr />
+									-->
+								<footer>
+									<ul class="icons">
+										<li><a onclick="document.getElementById('file').click(); return false;" class="fa-folder-open">Browse</a></li>
+										<li><a id="cameraIcon" onclick="document.getElementById('openCamera').click(); return false;" class="fa-camera">Open Camera</a></li>
+										<!-- <li><a href="#" class="fa-facebook">Facebook</a></li> -->
+									</ul>
+
+
+									<form id="form" enctype="multipart/form-data" method="post">
+										<p><input type="file" id="file" name="file" accept="image/*" style="display:none"/></p>
+										<p><input type="button" id="openCamera" value="Open Camera" name="openCamera" style="display:none"/></p>
+									</form>
+									<p>
+										<img id="img" width="480" min-width="320" hidden="true"/>
+										<video id="video" width="640" height="480" autoplay hidden="true"></video>
+										<canvas id="canvas" hidden="true"></canvas>
+									</p>
+									<p><input type="button" id="submit" value="Process Image" disabled="true"/></p>
+									<p><progress id="progress" value="0" min="0" max="100" style="max-width:400px; width:70vw; height:30px" hidden="true" /></p>
+									<div id="code" class="snippetTitle" hidden="true">
+										Code:
+									</div>
+									<textarea id="codeText" class="snippet" hidden="true" autofocus="false"></textarea>
+									<div id="result" class="snippetTitle" hidden="true">
+										Result:
+									</div>
+									<p id="resultText" class="snippet" hidden="true" min-height="20px"></p>
+									<p><input type="button" id="update" value="Update Code" hidden="true" /></p>
+									<br />
+								</footer>
+							</section>
+						<!-- </td> -->
+
+						<!-- <td>
+							<section id="main"> -->
+
+
+									<!-- <form id="form" enctype="multipart/form-data" method="post">
+										<p><input type="file" id="file" name="file" accept="image/*" style="display:none"/></p>
+										<p><input type="button" id="openCamera" value="Open Camera" name="openCamera" style="display:none"/></p>
+									</form>
+									<p>
+										<img id="img" height="480" hidden="false"/>
+										<video id="video" width="640" height="480" autoplay hidden="false"></video>
+										<canvas id="canvas" hidden="true"></canvas>
+									</p>
+									<p>
+										<input type="button" id="submit" value="Send Image" disabled="true"/>
+										<br /><br />
+										<progress id="progress" value="0" min="0" max="100" style="width:300px;" hidden="true"/>
+									</p> -->
+							<!-- </section>
+						</td> -->
+					<!-- </tr> -->
+
+				<!-- </table> -->
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<!-- <li>&copy; Optecode</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li> -->
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
+			<script>
+				if ('addEventListener' in window) {
+					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
+					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+				}
+
+				if ((/mobile/i.test(navigator.userAgent))) {
+					var cameraIcon = document.getElementById('cameraIcon');
+					cameraIcon.parentElement.removeChild(cameraIcon);
+				}
+			</script>
+
+			<script src="javascript/jquery.js"></script>
+			<script src="javascript/main.js"></script>
+
+	</body>
+</html>
