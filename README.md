@@ -12,10 +12,13 @@ Handwriting recognition for code isn't where I'd want it to be. I built a set of
 
 # Examples:
 *Home Page:*
+
 ![](imgs/index.png)
 
 *Compile and see output:*
+
 ![](imgs/process.jpg)
 
 *Compile and see error messages:*
+
 ![](imgs/errors.jpg)
